@@ -1,0 +1,738 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04CAA8982F8F309B003B93B0 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04CAA8972F8F309A003B93B0 /* WidgetKit.framework */; };
+		04CAA89A2F8F309B003B93B0 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04CAA8992F8F309B003B93B0 /* SwiftUI.framework */; };
+		04CAA8AB2F8F309E003B93B0 /* RichardWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 04CAA8952F8F309A003B93B0 /* RichardWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		047E8D202F8D4323008251CD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 047E8D0A2F8D4320008251CD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 047E8D112F8D4320008251CD;
+			remoteInfo = RichardApp;
+		};
+		047E8D2A2F8D4323008251CD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 047E8D0A2F8D4320008251CD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 047E8D112F8D4320008251CD;
+			remoteInfo = RichardApp;
+		};
+		04CAA8A92F8F309E003B93B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 047E8D0A2F8D4320008251CD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04CAA8942F8F309A003B93B0;
+			remoteInfo = RichardWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		04CAA8B02F8F309E003B93B0 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				04CAA8AB2F8F309E003B93B0 /* RichardWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		047E8D122F8D4320008251CD /* RichardApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RichardApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		047E8D1F2F8D4323008251CD /* RichardAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RichardAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		047E8D292F8D4323008251CD /* RichardAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RichardAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04CAA8952F8F309A003B93B0 /* RichardWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RichardWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		04CAA8972F8F309A003B93B0 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		04CAA8992F8F309B003B93B0 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		04CAA8AC2F8F309E003B93B0 /* Exceptions for "RichardWidget" folder in "RichardWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 04CAA8942F8F309A003B93B0 /* RichardWidgetExtension */;
+		};
+		04CAA8B22F8F3159003B93B0 /* Exceptions for "RichardApp" folder in "RichardWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Assets.xcassets,
+				Models/RichardActivityAttributes.swift,
+				Models/RichardModels.swift,
+			);
+			target = 04CAA8942F8F309A003B93B0 /* RichardWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		047E8D142F8D4320008251CD /* RichardApp */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				04CAA8B22F8F3159003B93B0 /* Exceptions for "RichardApp" folder in "RichardWidgetExtension" target */,
+			);
+			path = RichardApp;
+			sourceTree = "<group>";
+		};
+		047E8D222F8D4323008251CD /* RichardAppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = RichardAppTests;
+			sourceTree = "<group>";
+		};
+		047E8D2C2F8D4323008251CD /* RichardAppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = RichardAppUITests;
+			sourceTree = "<group>";
+		};
+		04CAA89B2F8F309B003B93B0 /* RichardWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				04CAA8AC2F8F309E003B93B0 /* Exceptions for "RichardWidget" folder in "RichardWidgetExtension" target */,
+			);
+			path = RichardWidget;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		047E8D0F2F8D4320008251CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		047E8D1C2F8D4323008251CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		047E8D262F8D4323008251CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04CAA8922F8F309A003B93B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04CAA89A2F8F309B003B93B0 /* SwiftUI.framework in Frameworks */,
+				04CAA8982F8F309B003B93B0 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		047E8D092F8D4320008251CD = {
+			isa = PBXGroup;
+			children = (
+				047E8D142F8D4320008251CD /* RichardApp */,
+				047E8D222F8D4323008251CD /* RichardAppTests */,
+				047E8D2C2F8D4323008251CD /* RichardAppUITests */,
+				04CAA89B2F8F309B003B93B0 /* RichardWidget */,
+				04CAA8962F8F309A003B93B0 /* Frameworks */,
+				047E8D132F8D4320008251CD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		047E8D132F8D4320008251CD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				047E8D122F8D4320008251CD /* RichardApp.app */,
+				047E8D1F2F8D4323008251CD /* RichardAppTests.xctest */,
+				047E8D292F8D4323008251CD /* RichardAppUITests.xctest */,
+				04CAA8952F8F309A003B93B0 /* RichardWidgetExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04CAA8962F8F309A003B93B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04CAA8972F8F309A003B93B0 /* WidgetKit.framework */,
+				04CAA8992F8F309B003B93B0 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		047E8D112F8D4320008251CD /* RichardApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 047E8D332F8D4323008251CD /* Build configuration list for PBXNativeTarget "RichardApp" */;
+			buildPhases = (
+				047E8D0E2F8D4320008251CD /* Sources */,
+				047E8D0F2F8D4320008251CD /* Frameworks */,
+				047E8D102F8D4320008251CD /* Resources */,
+				04CAA8B02F8F309E003B93B0 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04CAA8AA2F8F309E003B93B0 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				047E8D142F8D4320008251CD /* RichardApp */,
+			);
+			name = RichardApp;
+			productName = RichardApp;
+			productReference = 047E8D122F8D4320008251CD /* RichardApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		047E8D1E2F8D4323008251CD /* RichardAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 047E8D362F8D4323008251CD /* Build configuration list for PBXNativeTarget "RichardAppTests" */;
+			buildPhases = (
+				047E8D1B2F8D4323008251CD /* Sources */,
+				047E8D1C2F8D4323008251CD /* Frameworks */,
+				047E8D1D2F8D4323008251CD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				047E8D212F8D4323008251CD /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				047E8D222F8D4323008251CD /* RichardAppTests */,
+			);
+			name = RichardAppTests;
+			productName = RichardAppTests;
+			productReference = 047E8D1F2F8D4323008251CD /* RichardAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		047E8D282F8D4323008251CD /* RichardAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 047E8D392F8D4323008251CD /* Build configuration list for PBXNativeTarget "RichardAppUITests" */;
+			buildPhases = (
+				047E8D252F8D4323008251CD /* Sources */,
+				047E8D262F8D4323008251CD /* Frameworks */,
+				047E8D272F8D4323008251CD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				047E8D2B2F8D4323008251CD /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				047E8D2C2F8D4323008251CD /* RichardAppUITests */,
+			);
+			name = RichardAppUITests;
+			productName = RichardAppUITests;
+			productReference = 047E8D292F8D4323008251CD /* RichardAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		04CAA8942F8F309A003B93B0 /* RichardWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04CAA8AD2F8F309E003B93B0 /* Build configuration list for PBXNativeTarget "RichardWidgetExtension" */;
+			buildPhases = (
+				04CAA8912F8F309A003B93B0 /* Sources */,
+				04CAA8922F8F309A003B93B0 /* Frameworks */,
+				04CAA8932F8F309A003B93B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				04CAA89B2F8F309B003B93B0 /* RichardWidget */,
+			);
+			name = RichardWidgetExtension;
+			productName = RichardWidgetExtension;
+			productReference = 04CAA8952F8F309A003B93B0 /* RichardWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		047E8D0A2F8D4320008251CD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					047E8D112F8D4320008251CD = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					047E8D1E2F8D4323008251CD = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 047E8D112F8D4320008251CD;
+					};
+					047E8D282F8D4323008251CD = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 047E8D112F8D4320008251CD;
+					};
+					04CAA8942F8F309A003B93B0 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+				};
+			};
+			buildConfigurationList = 047E8D0D2F8D4320008251CD /* Build configuration list for PBXProject "RichardApp" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 047E8D092F8D4320008251CD;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 047E8D132F8D4320008251CD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				047E8D112F8D4320008251CD /* RichardApp */,
+				047E8D1E2F8D4323008251CD /* RichardAppTests */,
+				047E8D282F8D4323008251CD /* RichardAppUITests */,
+				04CAA8942F8F309A003B93B0 /* RichardWidgetExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		047E8D102F8D4320008251CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		047E8D1D2F8D4323008251CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		047E8D272F8D4323008251CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04CAA8932F8F309A003B93B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		047E8D0E2F8D4320008251CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		047E8D1B2F8D4323008251CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		047E8D252F8D4323008251CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04CAA8912F8F309A003B93B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		047E8D212F8D4323008251CD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 047E8D112F8D4320008251CD /* RichardApp */;
+			targetProxy = 047E8D202F8D4323008251CD /* PBXContainerItemProxy */;
+		};
+		047E8D2B2F8D4323008251CD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 047E8D112F8D4320008251CD /* RichardApp */;
+			targetProxy = 047E8D2A2F8D4323008251CD /* PBXContainerItemProxy */;
+		};
+		04CAA8AA2F8F309E003B93B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04CAA8942F8F309A003B93B0 /* RichardWidgetExtension */;
+			targetProxy = 04CAA8A92F8F309E003B93B0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		047E8D312F8D4323008251CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		047E8D322F8D4323008251CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		047E8D342F8D4323008251CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.RichardApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		047E8D352F8D4323008251CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.RichardApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		047E8D372F8D4323008251CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.RichardAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RichardApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RichardApp";
+			};
+			name = Debug;
+		};
+		047E8D382F8D4323008251CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.RichardAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RichardApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RichardApp";
+			};
+			name = Release;
+		};
+		047E8D3A2F8D4323008251CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.RichardAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RichardApp;
+			};
+			name = Debug;
+		};
+		047E8D3B2F8D4323008251CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.RichardAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RichardApp;
+			};
+			name = Release;
+		};
+		04CAA8AE2F8F309E003B93B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RichardWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RichardWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.RichardApp.RichardWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		04CAA8AF2F8F309E003B93B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RichardWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RichardWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.RichardApp.RichardWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		047E8D0D2F8D4320008251CD /* Build configuration list for PBXProject "RichardApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				047E8D312F8D4323008251CD /* Debug */,
+				047E8D322F8D4323008251CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		047E8D332F8D4323008251CD /* Build configuration list for PBXNativeTarget "RichardApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				047E8D342F8D4323008251CD /* Debug */,
+				047E8D352F8D4323008251CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		047E8D362F8D4323008251CD /* Build configuration list for PBXNativeTarget "RichardAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				047E8D372F8D4323008251CD /* Debug */,
+				047E8D382F8D4323008251CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		047E8D392F8D4323008251CD /* Build configuration list for PBXNativeTarget "RichardAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				047E8D3A2F8D4323008251CD /* Debug */,
+				047E8D3B2F8D4323008251CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04CAA8AD2F8F309E003B93B0 /* Build configuration list for PBXNativeTarget "RichardWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04CAA8AE2F8F309E003B93B0 /* Debug */,
+				04CAA8AF2F8F309E003B93B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 047E8D0A2F8D4320008251CD /* Project object */;
+}
