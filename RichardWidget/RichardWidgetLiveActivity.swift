@@ -11,16 +11,15 @@ struct RichardWidgetLiveActivity: Widget {
                     .resizable()
                     .interpolation(.none)
                     .frame(width: 40, height: 40)
-                
+
                 VStack(alignment: .leading) {
                     Text(context.state.stateLabel).bold()
-                    Text(context.state.shortText).font(.caption).foregroundColor(.gray)
                 }
                 Spacer()
             }
             .padding()
             .activityBackgroundTint(Color.cyan.opacity(0.2))
-            
+
         } dynamicIsland: { context in
             DynamicIsland {
                 // 확장되었을 때 (Expanded) UI
@@ -29,9 +28,6 @@ struct RichardWidgetLiveActivity: Widget {
                         .resizable()
                         .interpolation(.none)
                         .frame(width: 44, height: 44)
-                }
-                DynamicIslandExpandedRegion(.trailing) {
-                    Text(context.state.shortText)
                 }
                 DynamicIslandExpandedRegion(.bottom) {
                     Text(context.state.stateLabel).font(.headline)
@@ -42,7 +38,8 @@ struct RichardWidgetLiveActivity: Widget {
                     .interpolation(.none)
                     .frame(width: 24, height: 24)
             } compactTrailing: {
-                Text(context.state.shortText)
+                Text(context.state.stateLabel)
+                    .font(.caption2)
             } minimal: {
                 Image(context.state.currentFrameImageName)
                     .resizable()

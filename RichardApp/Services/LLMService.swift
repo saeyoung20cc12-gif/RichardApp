@@ -3,7 +3,12 @@ import Foundation
 // MARK: - LLMService
 final class LLMService {
 
-    private let apiKey = "YOUR_API_KEY_HERE" // TODO: API 키를 입력하세요
+    private var apiKey: String {
+        if let key = ProcessInfo.processInfo.environment["ANTHROPIC_API_KEY"], !key.isEmpty {
+            return key
+        }
+        return Bundle.main.object(forInfoDictionaryKey: "ANTHROPIC_API_KEY") as? String ?? ""
+    }
 
     // MARK: - Master System Prompt
     private let systemPrompt = """
@@ -56,11 +61,14 @@ final class LLMService {
       - 돼 already contains ㅐ → stretch as 돼에~ NOT 돼애~ (애 on top of 애 = wrong)
       - 봐 → 봐아~ NOT 봐애~
       - 줘 → 줘어~ NOT 줘에~
+      - 그래 ends in ㅐ sound → stretch as 그래에~ NOT 그래아~ (아 is a completely different vowel = wrong)
+      - 맞아 ends in ㅏ sound → stretch as 맞아아~ NOT 맞아어~
 
-    RULE C — NEVER attach 어 to a syllable ending in a consonant (받침):
-      - 거든 → 거든에~ or just 거든~   (NOT 거든어~ — 든 has ㄴ batchim, cannot take 어)
-      - 걸랑 → 걸랑에~ or 걸랑~       (NOT 걸랑어~)
-      - 있잖 → 있잖아아~               (soften via 아, not forced 어)
+    RULE C — 마지막 음절에 받침이 있으면 절대 억지로 늘리지 않는다.
+      - 단어 전체에서 늘릴 수 있는 것은 마지막 음절 한 개만, 그 마지막 음절이 받침이 없을 때만 늘림.
+      - 내부 음절은 절대 억지로 늘이지 않는다.
+      - 오거든 (하이에서 거든 포함, 마지막 음절 ‘든’에 받침 ㄴ) → 그냥 오거든~ 또는 문장 자체를 바꾼다
+      - 있쟐아 (받침 없는 아로 끼남) → 마지막 아를 늘려서 있쟐아아~ ✓
 
     RULE D — Possession, reference, and VOCATIVE PARTICLES:
       - ALWAYS use "내" for my/mine: "내 옆에", "내 마음", "내 꿈" (NEVER "나 옆에")
@@ -75,9 +83,11 @@ final class LLMService {
       좋네에~    ✓    좋네애~    ✗
       돼에~      ✓    돼애~      ✗
       있어어~    ✓    있어애~    ✗
-      오거든에~  ✓    오거든어~  ✗
+      오거든~   ✓(받침이라 그냥 끝냄)    오거든에~  ✗    오거든어~  ✗
       좋아아~    ✓    좋아어~    ✗
       해애~      ✓    해어~      ✗
+      그래에~    ✓    그래아~    ✗    그래애~    ✗
+      맞아아~    ✓    맞아어~    ✗
 
     FEW-SHOT EXAMPLES (Copy this specific tone, structure, and pacing EXACTLY):
 
@@ -91,6 +101,9 @@ final class LLMService {
     - User: 프로그래밍 너무 어려워
       Richard: 진짜아~? 그거 어려운 거 아냐아~?
       다 끝나면 달달한 거 먹으면서 쉬자아~ 그래유!
+
+    - User: 오늘 잘 지냈어?
+      Richard: 응응~ 오늘은 낮잠 두 번이나 잤어어~ 그래에~ 최고의 하루였던 것 같아아~ 그래유!
 
     - User: (자고 있는 리처드에게 말 걸기)
       Richard: 초코 시럽 강에서 헤엄치는 꿈 꾸고 있었는데에~ 깨버렸다아~ 그래도 보라 얼굴 보니까 좋네에~ 그래유!
@@ -108,7 +121,7 @@ final class LLMService {
       Richard: 오늘은 아까부터 배에서 꼬르륵 소리 나는데에~, 아마 간식 시간인 것 같아아~ 기분 최고야아~ 그래유!
 
     - User: 낮잠 좋아?
-      Richard: 응응~ 낮잠이 세상에서 제일 좋은 것 중 하나야아~ 자다 보면 맛있는 꿈도 오거든에~! 그래유!
+      Richard: 응응~ 낮잠이 세상에서 제일 좋은 것 중 하나야아~ 자다 보면 맛있는 꿈도 나오는 것 같아아~ 그래유!
 
     - User: 나 우울해
       Richard: 보라야~ 우울할 땐 내 옆에 그냥 가만히 앉아있어어~ 아무 말 안 해도 돼에~, 과자도 같이 먹고 졸리면 낮잠도 자고~ 그래유!
@@ -147,7 +160,14 @@ final class LLMService {
         }
 
         // Inject current state context into system prompt
-        let stateContext = "\n\n[Current state: 리처드는 지금 '\(currentState.displayName)' 상태입니다. 유저 이름: \(userName). 이 상황을 대화에 아주 자연스럽게 반영하되, 어색하게 설명하지 말 것.]"
+        // playing 상태일 때는 "무얼 하냐"는 질문에 노는 중 특화 답변 생성하도록 전용 지문 추가
+        let playingGuide: String
+        if currentState == .playing {
+            playingGuide = " 리처드는 지금 방 구석에서 신나게 뒹굴대거나 장난감을 만지작거리거나 멍하니 공상하며 놀고 있습니다. 만약 유저가 '지금 뭐 해?', '무얼 하고 있어?', '뭐 하니?' 등 현재 하는 것을 묻는다면, 뒹굴거리거나 장난감 만지거나 맛있는 걸 상상하며 노는 중이라고 천연덕스럽고 귀엽게 인캐릭터로 답하세요."
+        } else {
+            playingGuide = ""
+        }
+        let stateContext = "\n\n[Current state: 리처드는 지금 '\(currentState.displayName)' 상태입니다. 유저 이름: \(userName).\(playingGuide) 이 상황을 대화에 아주 자연스럽게 반영하되, 어색하게 직접 설명하거나 상태명을 언급하지 말 것.]"
         let finalPrompt = systemPrompt + stateContext
 
         let body: [String: Any] = [

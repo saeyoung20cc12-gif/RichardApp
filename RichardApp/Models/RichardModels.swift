@@ -1,64 +1,61 @@
 import Foundation
 
-// MARK: - Richard's possible states throughout the day
+// MARK: - Richard's 9 emotional/behavioral states
 enum RichardState: String, Codable, CaseIterable {
-    case sleeping   // 23:00 ~ 07:59
-    case waking     // 08:00 ~ 08:30 (transition)
-    case eating     // 밥/간식 먹는 중 (snack 애니메이션)
-    case playing    // Running outside / reading comics
-    case idle       // Default daytime state (normal 애니메이션)
-    case chatting   // When user is talking to Richard (normal 애니메이션)
-    case test       // Dynamic Island 확인용 고정 테스트 상태
+    case idle       // 기본: 평온한 대기 상태
+    case happy      // 행복함: 미소 짓는 상태
+    case playing    // 노는중: 신나게 뛰노는 내장 상태 (Dynamic Island에는 happy와 동일하게 표시)
+    case eating     // 간식먹는중: 냠냠 먹는 상태
+    case crying     // 눈물: 훌쩍훌쩍 우는 상태
+    case surprised  // 놀람: 깜짝 놀란 상태
+    case missing    // 보고싶어함: 그리워하는 상태
+    case annoyed    // 심기불편: 토라진 상태
+    case sleeping   // 자는중: 눈을 감고 자는 상태
 
     var displayName: String {
         switch self {
-        case .sleeping: return "자는 중"
-        case .waking:   return "일어나는 중"
-        case .eating:   return "먹는 중"
-        case .playing:  return "노는 중"
-        case .idle:     return "쉬는 중"
-        case .chatting: return "대화 중"
-        case .test:     return "테스트 중"
+        case .idle:       return "쉬는 중"
+        case .happy:      return "행복함"
+        case .playing:    return "노는 중"
+        case .eating:     return "먹는 중"
+        case .crying:     return "우는 중"
+        case .surprised:  return "놀람"
+        case .missing:    return "그리워하는 중"
+        case .annoyed:    return "토라짐"
+        case .sleeping:   return "자는 중"
         }
     }
 
-    /// 애니메이션 베이스 이름 — 위젯에서 "\(faceImageName)\(frameIndex+1)" 형태로 asset 참조
-    /// normal → normal1.png / normal2.png (4fps)
-    /// snack  → snack1.png  / snack2.png  (1fps)
-    var faceImageName: String {
+
+    /// 상태별 픽셀 아트 프레임 시퀀스 (1fps로 순환 반복)
+    /// - playing은 Dynamic Island에 happy와 동일하게 표시 (내장 상태 비노출)
+    /// - sleeping은 기본 눈감음 단독 고정 프레임
+    /// - eating은 1→2 왕복 후 마지막에 snack3 등장하는 7프레임 루프
+    var animationFrames: [String] {
         switch self {
-        case .eating:           return "snack"
-        case .sleeping,
-             .waking,
-             .playing,
-             .idle,
-             .chatting:         return "normal"
-        case .test:             return "test"
+        case .idle:
+            return ["normal_default", "normal_blink"]
+        case .happy, .playing:
+            return ["normal_default", "happy_laugh"]
+        case .eating:
+            // ActivityKit throttle 방지: 2프레임만 유지
+            return ["snack1", "snack2"]
+        case .crying:
+            return ["cry1", "cry2"]
+        case .surprised:
+            return ["surprised"]
+        case .missing:
+            return ["missu"]
+        case .annoyed:
+            return ["annoyed"]
+        case .sleeping:
+            return ["normal_blink"]
         }
     }
 
-    /// 상태별 애니메이션 FPS (타이머 간격 계산에 사용)
-    /// ActivityKit throttle 고려해 normal은 2fps로 제한
-    var animationFPS: Double {
-        switch self {
-        case .eating:   return 1.0  // snack: 1fps — 느긋하게
-        case .test:     return 1.0  // test: 고정 이미지 확인용
-        default:        return 2.0  // normal: 2fps — ActivityKit 안전 상한
-        }
-    }
-
-    /// Short cute text for the right side of the Dynamic Island pill
-    var shortText: String {
-        switch self {
-        case .sleeping: return "Zzz..."
-        case .waking:   return "주섬주섬.."
-        case .eating:   return "냠냠🍰"
-        case .playing:  return "우다다다!"
-        case .idle:     return "멍..."
-        case .chatting: return "히히!"
-        case .test:     return "test"
-        }
-    }
+    /// ActivityKit 안전 갱신 주기: 1.0fps (1초 간격)
+    /// — 너무 빠른 업데이트는 ActivityKit이 throttle하여 애니메이션이 멈추는 원인이 됨
+    var animationFPS: Double { return 1.0 }
 }
 
 // MARK: - Chat Message model
@@ -89,4 +86,27 @@ struct AppSettings {
         get { UserDefaults.standard.string(forKey: userNameKey) ?? "보라" }
         set { UserDefaults.standard.set(newValue, forKey: userNameKey) }
     }
+}
+
+// MARK: - DailyMission Model
+struct DailyMission: Identifiable, Codable, Hashable {
+    var id: String { missionId }
+    let missionId: String
+    let title: String
+    let reward: Int
+    var isCompleted: Bool
+    var isClaimed: Bool
+    var progress: Int
+    let target: Int
+}
+
+// MARK: - SnackItem Model
+struct SnackItem: Identifiable, Codable, Hashable {
+    let id: String
+    let name: String
+    let icon: String
+    let coinCost: Int
+    let hungerFill: Int
+    let happinessBonus: Int
+    let funBonus: Int
 }
